@@ -4,24 +4,21 @@
 #include<vector>
 #include<iostream>
 class CoffeeMaker : public ICoffeeMachine, ICoffeeMachineRecipe
-{
-
-		void SetEspressoRecipe() override;
+{		void SetEspressoRecipe() override;
 		void SetAmericanoRecipe() override;
 		void SetLatteRecipe() override;
-
-	public:
-
+public:
 		CoffeeMaker(int water, int sugar, int milk, int coffee);
 		//~CoffeeMachine() override;
 		bool MakeEspresso() override;
 		bool MakeAmericano() override;
 		bool MakeLatte()  override;
-
 	
-		
-		int AddSugar(int gr);
-		
+		int AddWater(int);
+		int AddSugar(int);
+		int AddMilk(int);
+		int AddCoffee(int);
+		bool ChekIngredientLowLvl(int,int,int,int);	
 
 		//void SetNewRecipe(std::string mane, int water, int sugar, int milk, int coffee, int t, int time)override;
 		struct recipe {
@@ -44,16 +41,19 @@ class CoffeeMaker : public ICoffeeMachine, ICoffeeMachineRecipe
 		int m_curValCoffee;
 		//water lvl
 		int m_minLevelWater = 0;
-		int m_lowLevelWater = 100;
+		int m_lowLevelWater = 150;
+		int m_maxLevelWater = 1000;
 		//sugar lvl
 		int m_minValSugar = 0;
 		int m_lowValSugar = 100;
-		int m_maxValSugar = 3000;
+		int m_maxValSugar = 800;
 
 		//milk lvl
 		int m_minLevelmilk = 0;
+		int m_maxLevelmilk = 300;
 		//coffee lvl
 		int m_minValCoffee = 0;
+		int m_maxValCoffee = 500;
 
 		recipe m_espresoo;
 		recipe m_americano;

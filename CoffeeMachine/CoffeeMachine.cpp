@@ -6,7 +6,7 @@
 int main()
 {
     //enter start val of ingredients:water,sugar,milk,coffee
-    CoffeeMaker Redmond(5000, 3000, 1000, 2000);
+    CoffeeMaker Redmond(1000, 800, 300, 400);
     Redmond.MakeAmericano();
     Redmond.MakeAmericano();
     Redmond.MakeAmericano();
@@ -21,22 +21,27 @@ int main()
     Redmond.MakeLatte();
     Redmond.MakeAmericano();
     Redmond.MakeAmericano();
+    Redmond.AddWater(1000);
     Redmond.MakeAmericano();
-    int overSize = Redmond.AddSugar(1000);
-    Redmond.MakeAmericano();
-    Redmond.MakeLatte();
-    Redmond.MakeLatte();
-    Redmond.MakeLatte();
+    int overSizeSugar = Redmond.AddSugar(500);
     Redmond.MakeAmericano();
     Redmond.MakeLatte();
     Redmond.MakeLatte();
     Redmond.MakeLatte();
     Redmond.MakeAmericano();
+    Redmond.MakeLatte();
+    Redmond.MakeLatte();
+    Redmond.MakeEspresso();
+    Redmond.MakeLatte();
     Redmond.MakeAmericano();
+    Redmond.MakeAmericano();
+    int overSizeWater = Redmond.AddWater(800);
     Redmond.MakeLatte();
     Redmond.MakeLatte();
     Redmond.MakeLatte();
+    
     std::cout << "Hello World!\n";
+
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
